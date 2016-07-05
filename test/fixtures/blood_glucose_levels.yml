@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  data: 1
+  recorded_at: 2016-07-03 17:38:51
+
+two:
+  user: 
+  data: 1
+  recorded_at: 2016-07-03 17:38:51

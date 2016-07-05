@@ -1,0 +1,23 @@
+
+<%= form_for(@blood_glucose_level) do |f| %>
+  <% if @blood_glucose_level.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@blood_glucose_level.errors.count, "error") %> prohibited this blood_glucose_level from being saved:</h2>
+
+      <ul>
+      <% @blood_glucose_level.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :enter_glucose_level %><br>
+    <%= f.number_field :data %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<h3>Listing Blood Glucose Levels</h3>
+
+<ul class="list-inline">
+  <li><span class="label label-warning lb-lg">Min<span class="badge"><%=get_min_level(@blood_glucose_levels)%>mg/dl</span></span></li>
+  <li><span class="label label-success lb-lg">Avg<span class="badge"><%=get_avg_level(@blood_glucose_levels)%>mg/dl</span></span></li>
+  <li><span class="label label-danger lb-lg">Max<span class="badge"><%=get_max_level(@blood_glucose_levels)%>mg/dl</span></span></li>
+</ul>
+<table class="table table-fixed table-striped">
+  <thead>
+    <tr>
+      <th>SN</th>
+      <th>Glucose Level</th>
+      <th>Recorded at</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blood_glucose_levels.each_with_index do |blood_glucose_level,index| %>
+      <tr>
+        <td><%=index+1%></td>
+        <td><%= blood_glucose_level.data %>mg/dl</td>
+        <td><%= blood_glucose_level.recorded_at %></td>
+        <td><%= link_to 'Edit', edit_blood_glucose_level_path(blood_glucose_level) %></td>
+        <td><%= link_to 'Destroy', blood_glucose_level, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
